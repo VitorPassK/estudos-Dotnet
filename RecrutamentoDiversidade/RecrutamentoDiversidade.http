@@ -1,0 +1,6 @@
+@RecrutamentoDiversidade_HostAddress = http://localhost:5101
+
+GET {{RecrutamentoDiversidade_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
