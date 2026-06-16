@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using RecrutamentoDiversidade.Data;
-//using RecrutamentoDiversidade.Middleware;
-//using RecrutamentoDiversidade.Repositories;
-//using RecrutamentoDiversidade.Repositories.Interfaces;
-//using RecrutamentoDiversidade.Services;
-//using RecrutamentoDiversidade.Services.Interfaces;
+using RecrutamentoDiversidade.Middleware;
+using RecrutamentoDiversidade.Repositories;
+using RecrutamentoDiversidade.Repositories.Interfaces;
+using RecrutamentoDiversidade.Services;
+using RecrutamentoDiversidade.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -47,16 +47,16 @@ builder.Services.AddControllers();
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 
-//builder.Services.AddScoped<IVagaRepository, VagaRepository>();
-//builder.Services.AddScoped<ICandidatoRepository, CandidatoRepository>();
-//builder.Services.AddScoped<ICandidaturaRepository, CandidaturaRepository>();
-//builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<IVagaRepository, VagaRepository>();
+builder.Services.AddScoped<ICandidatoRepository, CandidatoRepository>();
+builder.Services.AddScoped<ICandidaturaRepository, CandidaturaRepository>();
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 
-//builder.Services.AddScoped<IVagaService, VagaService>();
-//builder.Services.AddScoped<ICandidatoService, CandidatoService>();
-//builder.Services.AddScoped<ICandidaturaService, CandidaturaService>();
-//builder.Services.AddScoped<IAuthService, AuthService>();
-//builder.Services.AddScoped<IRelatorioService, RelatorioService>();
+builder.Services.AddScoped<IVagaService, VagaService>();
+builder.Services.AddScoped<ICandidatoService, CandidatoService>();
+builder.Services.AddScoped<ICandidaturaService, CandidaturaService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IRelatorioService, RelatorioService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
@@ -104,7 +104,7 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-//app.UseMiddleware<ExceptionMiddleware>();
+app.UseMiddleware<ExceptionMiddleware>();
 
 if (app.Environment.IsDevelopment())
 {
