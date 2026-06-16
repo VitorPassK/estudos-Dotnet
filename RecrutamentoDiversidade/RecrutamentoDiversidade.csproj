@@ -29,8 +29,6 @@
   <ItemGroup>
     <Folder Include="Migrations\" />
     <Folder Include="Middleware\" />
-    <Folder Include="Repositories\" />
-    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>
