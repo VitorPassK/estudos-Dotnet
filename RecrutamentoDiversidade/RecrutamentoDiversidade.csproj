@@ -31,8 +31,6 @@
     <Folder Include="Middleware\" />
     <Folder Include="Repositories\" />
     <Folder Include="Services\" />
-    <Folder Include="ViewModels\Response\" />
-    <Folder Include="ViewModels\Request\" />
   </ItemGroup>
 
 </Project>
